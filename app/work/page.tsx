@@ -114,7 +114,7 @@ export default function Work() {
         alt="Sketch of a hand drawn arrow pointing upwards"
         width={786}
         height={882}
-        className={styles.arrow}
+        className={styles.arrow} data-era-image
       />
     </main>
   );

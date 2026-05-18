@@ -60,7 +60,7 @@ export default function Skills() {
         alt="Sketch of a dog named Carl"
         width={1352}
         height={1606}
-        className={styles.carl}
+        className={styles.carl} data-era-image
       />
     </main>
   );

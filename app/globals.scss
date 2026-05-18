@@ -29,6 +29,11 @@ a {
   }
 }
 
+// Hide illustrative images outside of "today" era
+:not([data-era="today"]) [data-era-image] {
+  display: none;
+}
+
 // Era overrides — proof of concept, full styles come later
 
 [data-era="1993"] [data-site],
