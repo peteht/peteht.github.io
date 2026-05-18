@@ -1,7 +1,8 @@
 import Image from "next/image";
+import type { Project } from "@/types";
 import styles from "./work.module.scss";
 
-const projects = [
+const projects: Project[] = [
   {
     name: "Oregon Gridiron",
     url: "www.oregongridiron.com",

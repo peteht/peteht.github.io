@@ -1,7 +1,8 @@
 import Image from "next/image";
+import type { SkillGroup } from "@/types";
 import styles from "./skills.module.scss";
 
-const skillGroups = [
+const skillGroups: SkillGroup[] = [
   {
     name: "Development",
     skills: [
