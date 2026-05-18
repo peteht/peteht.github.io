@@ -41,6 +41,10 @@ a {
   all: revert;
 }
 
+[data-era="1993"] [data-site] [data-era-image] {
+  display: none;
+}
+
 [data-era="1999"] body {
   background: #000080;
   color: #ffff00;
