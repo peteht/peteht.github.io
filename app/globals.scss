@@ -38,7 +38,7 @@ a {
 
 [data-era="1993"] [data-site],
 [data-era="1993"] [data-site] * {
-  all: unset;
+  all: revert;
 }
 
 [data-era="1999"] body {
