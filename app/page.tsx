@@ -36,7 +36,8 @@ export default function Home() {
         alt="Sketched wolf with red fiery eyes"
         width={1813}
         height={1409}
-        className={styles.wolf} data-era-image
+        className={styles.wolf}
+        data-era-image
       />
     </>
   );

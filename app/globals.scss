@@ -52,10 +52,16 @@ a {
   display: block;
 }
 
-[data-era="1997"] [data-site] {
+[data-era="1997"] [data-site],
+[data-era="1997"] [data-site] header,
+[data-era="1997"] [data-site] main {
   max-width: 100%;
   width: 100%;
   text-align: center;
+}
+
+[data-era="1997"] [data-site] h1 {
+  font-family: 'Comic Sans MS', cursive;
 }
 
 [data-era="2008"] body {
