@@ -26,7 +26,7 @@ export default function RootLayout({
       <body>
         <ThemeProvider>
           <Timeline />
-          <div className={styles.site}>
+          <div className={styles.site} data-site>
             <header className={styles.header}>
               <h1 className={styles.name}>Pete Rugh</h1>
               <Nav />

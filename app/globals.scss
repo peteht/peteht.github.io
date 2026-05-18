@@ -31,8 +31,9 @@ a {
 
 // Era overrides — proof of concept, full styles come later
 
-[data-era="1993"] {
-  * { all: unset; }
+[data-era="1993"] [data-site],
+[data-era="1993"] [data-site] * {
+  all: unset;
 }
 
 [data-era="1999"] body {
