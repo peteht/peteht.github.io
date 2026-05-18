@@ -1,0 +1,26 @@
+.nav {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-family: 'Trebuchet MS', sans-serif;
+  padding-top: 0.8rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.sep {
+  color: #f60a00;
+  padding: 0 0.4rem;
+}
+
+.link {
+  color: #f60a00;
+
+}
+
+.active {
+  color: #f60a00;
+}

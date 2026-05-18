@@ -1,0 +1,30 @@
+$red: #f60a00;
+$black: #111111;
+$white: #ffffff;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: $white;
+  color: $black;
+  font-family: 'Trebuchet MS', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: $red;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
