@@ -27,7 +27,7 @@ export default function Home() {
           </p>
           <nav className={styles.links}>
             <a href="/work">Work</a>
-            <a href="/clients">Clients</a>
+            <a href="/skills">Skills</a>
           </nav>
         </article>
       </main>
