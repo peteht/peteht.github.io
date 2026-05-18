@@ -1,0 +1,59 @@
+.guestbook {
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.title {
+  font-family: 'Comic Sans MS', cursive;
+  color: #ff00ff;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.thanks {
+  font-family: 'Comic Sans MS', cursive;
+  color: #00ff00;
+  font-size: 1.1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input,
+.textarea {
+  font-family: 'Comic Sans MS', cursive;
+  background: #000033;
+  color: #ffffff;
+  border: 1px solid #ffff00;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.9rem;
+
+  &::placeholder {
+    color: #8888cc;
+  }
+}
+
+.textarea {
+  height: 80px;
+  resize: vertical;
+}
+
+.btn {
+  font-family: 'Comic Sans MS', cursive;
+  background: #ff00ff;
+  color: #ffffff;
+  border: 2px outset #ff88ff;
+  padding: 0.4rem 1.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: bold;
+
+  &:active {
+    border-style: inset;
+  }
+}

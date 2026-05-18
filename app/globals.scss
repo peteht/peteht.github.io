@@ -34,6 +34,15 @@ a {
   display: none;
 }
 
+// Era-specific decorative elements — hidden by default, shown per era
+[data-era-only] {
+  display: none;
+}
+
+[data-era="1997"] [data-era-only="1997"] {
+  display: block;
+}
+
 // Era overrides — proof of concept, full styles come later
 
 [data-era="1990"] [data-site],

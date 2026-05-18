@@ -3,6 +3,8 @@ import { Oswald } from "next/font/google";
 import Nav from "@/components/Nav";
 import ThemeProvider from "@/components/ThemeProvider";
 import Timeline from "@/components/Timeline";
+import OdometerCounter from "@/components/OdometerCounter";
+import Guestbook from "@/components/Guestbook";
 import "./globals.scss";
 import styles from "./layout.module.scss";
 
@@ -32,6 +34,10 @@ export default function RootLayout({
               <Nav />
             </header>
             {children}
+            <div data-era-only="1997">
+              <OdometerCounter />
+              <Guestbook />
+            </div>
           </div>
         </ThemeProvider>
       </body>
