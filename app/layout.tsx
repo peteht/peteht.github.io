@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Oswald } from "next/font/google";
 import Nav from "@/components/Nav";
+import ThemeProvider from "@/components/ThemeProvider";
+import Timeline from "@/components/Timeline";
 import "./globals.scss";
 import styles from "./layout.module.scss";
 
@@ -22,13 +24,16 @@ export default function RootLayout({
   return (
     <html lang="en" className={oswald.variable}>
       <body>
-        <div className={styles.site}>
-          <header className={styles.header}>
-            <h1 className={styles.name}>Pete Rugh</h1>
-            <Nav />
-          </header>
-          {children}
-        </div>
+        <ThemeProvider>
+          <Timeline />
+          <div className={styles.site}>
+            <header className={styles.header}>
+              <h1 className={styles.name}>Pete Rugh</h1>
+              <Nav />
+            </header>
+            {children}
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

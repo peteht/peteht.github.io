@@ -16,3 +16,5 @@ export interface SkillGroup {
   name: string;
   skills: string[];
 }
+
+export type Era = "1993" | "1999" | "2008" | "2016" | "today";
