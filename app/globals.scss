@@ -54,13 +54,20 @@ a {
 
 [data-era="1997"] [data-site],
 [data-era="1997"] [data-site] header,
-[data-era="1997"] [data-site] main {
+[data-era="1997"] [data-site] main,
+[data-era="1997"] [data-site] article {
   max-width: 100%;
   width: 100%;
+  display: block;
   text-align: center;
 }
 
-[data-era="1997"] [data-site] h1 {
+[data-era="1997"] [data-site] nav {
+  justify-content: center;
+}
+
+[data-era="1997"] [data-site] h1,
+[data-era="1997"] [data-site] h2 {
   font-family: 'Comic Sans MS', cursive;
 }
 
