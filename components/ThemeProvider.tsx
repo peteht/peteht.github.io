@@ -5,7 +5,7 @@ import type { Era } from "@/types";
 
 const STORAGE_KEY = "preferred-era";
 const DEFAULT_ERA: Era = "today";
-const ERAS: Era[] = ["1993", "1999", "2008", "2016", "today"];
+const ERAS: Era[] = ["1990", "1997", "2008", "2016", "today"];
 
 interface ThemeContextValue {
   era: Era;

@@ -36,16 +36,16 @@ a {
 
 // Era overrides — proof of concept, full styles come later
 
-[data-era="1993"] [data-site],
-[data-era="1993"] [data-site] * {
+[data-era="1990"] [data-site],
+[data-era="1990"] [data-site] * {
   all: revert;
 }
 
-[data-era="1993"] [data-site] [data-era-image] {
+[data-era="1990"] [data-site] [data-era-image] {
   display: none;
 }
 
-[data-era="1999"] body {
+[data-era="1997"] body {
   background: #000080;
   color: #ffff00;
   font-family: 'Comic Sans MS', cursive;

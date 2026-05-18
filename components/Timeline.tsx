@@ -5,8 +5,8 @@ import type { Era } from "@/types";
 import styles from "./Timeline.module.scss";
 
 const LABELS: Record<Era, string> = {
-  "1993": "1993",
-  "1999": "1999",
+  "1990": "1990",
+  "1997": "1997",
   "2008": "2008",
   "2016": "2016",
   "today": "Today",
