@@ -49,6 +49,13 @@ a {
   background: #000080;
   color: #ffff00;
   font-family: 'Comic Sans MS', cursive;
+  display: block;
+}
+
+[data-era="1997"] [data-site] {
+  max-width: 100%;
+  width: 100%;
+  text-align: center;
 }
 
 [data-era="2008"] body {
