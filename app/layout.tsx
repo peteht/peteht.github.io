@@ -33,10 +33,16 @@ export default function RootLayout({
               <h1 className={styles.name}>Pete Rugh</h1>
               <Nav />
             </header>
+            <div data-era-only="1997">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/construction.gif" alt="Under construction" />
+            </div>
             {children}
             <div data-era-only="1997">
               <OdometerCounter />
               <Guestbook />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/construction.gif" alt="Under construction" />
             </div>
           </div>
         </ThemeProvider>

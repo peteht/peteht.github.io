@@ -29,8 +29,8 @@ a {
   }
 }
 
-// Hide illustrative images outside of "today" era
-:not([data-era="today"]) [data-era-image] {
+// Hide illustrative images outside of "2026" era
+html:not([data-era="2026"]) [data-era-image] {
   display: none;
 }
 
@@ -39,18 +39,24 @@ a {
   display: none;
 }
 
-[data-era="1997"] [data-era-only="1997"] {
+html[data-era="1997"] [data-era-only="1997"] {
   display: block;
+  text-align: center;
 }
 
 // Era overrides — proof of concept, full styles come later
+
+[data-era="1990"] body {
+  font-family: 'Times New Roman', serif;
+}
 
 [data-era="1990"] [data-site],
 [data-era="1990"] [data-site] * {
   all: revert;
 }
 
-[data-era="1990"] [data-site] [data-era-image] {
+[data-era="1990"] [data-site] [data-era-image],
+[data-era="1990"] [data-site] [data-era-only] {
   display: none;
 }
 
@@ -78,6 +84,11 @@ a {
 [data-era="1997"] [data-site] h1,
 [data-era="1997"] [data-site] h2 {
   font-family: 'Comic Sans MS', cursive;
+}
+
+[data-era="1997"] [data-site] * {
+  box-shadow: none;
+  text-shadow: none;
 }
 
 [data-era="2008"] body {

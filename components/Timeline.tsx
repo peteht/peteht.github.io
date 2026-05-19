@@ -9,7 +9,7 @@ const LABELS: Record<Era, string> = {
   "1997": "1997",
   "2008": "2008",
   "2016": "2016",
-  "today": "Today",
+  "2026": "2026",
 };
 
 export default function Timeline() {
