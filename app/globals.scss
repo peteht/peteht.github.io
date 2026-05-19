@@ -45,6 +45,10 @@ a {
 
 // Era overrides — proof of concept, full styles come later
 
+[data-era="1990"] body {
+  background: green;
+}
+
 [data-era="1990"] [data-site],
 [data-era="1990"] [data-site] * {
   all: revert;
