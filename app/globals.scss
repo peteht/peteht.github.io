@@ -45,10 +45,6 @@ a {
 
 // Era overrides — proof of concept, full styles come later
 
-[data-era="1990"] body {
-  background: green;
-}
-
 [data-era="1990"] [data-site],
 [data-era="1990"] [data-site] * {
   all: revert;
@@ -59,7 +55,7 @@ a {
 }
 
 [data-era="1997"] body {
-  background: #000080;
+  background: green;
   color: #ffff00;
   font-family: 'Comic Sans MS', cursive;
   display: block;
