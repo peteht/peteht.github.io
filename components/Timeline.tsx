@@ -7,6 +7,7 @@ import styles from "./Timeline.module.scss";
 const LABELS: Record<Era, string> = {
   "1990": "1990",
   "1997": "1997",
+  "2004": "2004",
   "2008": "2008",
   "2016": "2016",
   "2026": "2026",
