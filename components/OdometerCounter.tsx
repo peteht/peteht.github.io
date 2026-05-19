@@ -1,6 +1,6 @@
 import styles from "./OdometerCounter.module.scss";
 
-const COUNT = "4892301";
+const COUNT = "0008347";
 
 export default function OdometerCounter() {
   return (
