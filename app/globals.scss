@@ -79,6 +79,24 @@ html[data-era="1997"] [data-era-only="1997"] {
 
 [data-era="1997"] [data-site] nav {
   justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+[data-era="1997"] [data-site] article nav {
+  flex-direction: column;
+  align-items: center;
+}
+
+[data-era="1997"] [data-site] article > div {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+[data-era="1997"] [data-site] ul {
+  list-style: none;
+  padding: 0;
 }
 
 [data-era="1997"] [data-site] h1,
@@ -86,9 +104,19 @@ html[data-era="1997"] [data-era-only="1997"] {
   font-family: 'Comic Sans MS', cursive;
 }
 
-[data-era="1997"] [data-site] * {
-  box-shadow: none;
-  text-shadow: none;
+[data-era="1997"] [data-site] *,
+[data-era="1997"] [data-site] *::before,
+[data-era="1997"] [data-site] *::after {
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+[data-era="1997"] a {
+  color: #0000EE;
+
+  &:visited {
+    color: #551A8B;
+  }
 }
 
 [data-era="2008"] body {
