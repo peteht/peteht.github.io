@@ -221,14 +221,21 @@ html[data-era="1997"] [data-era-only="1997"] {
     0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
-[data-era="2008"] [data-site] {
+[data-era="2008"] body {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
+}
+
+[data-era="2008"] [data-site] {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 [data-era="2008"] [data-site] header,
 [data-era="2008"] [data-site] main,
 [data-era="2008"] [data-site] footer,
-[data-era="2008"] [data-site] > nav,
 [data-era="2008"] [data-site] article {
   max-width: 60rem;
 }
@@ -332,11 +339,19 @@ html[data-era="1997"] [data-era-only="1997"] {
   background: #fff;
 }
 
+[data-era="2016"] body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 [data-era="2016"] [data-site] {
   max-width: 960px;
   margin: 0 auto;
   background: #e3f2fd;
-  min-height: 100vh;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 [data-era="2016"] [data-site] main {
