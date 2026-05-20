@@ -51,6 +51,7 @@ export default function RootLayout({
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/construction.gif" alt="Under construction" />
             </div>
+            <footer className={styles.footer}>made with ❤️ in Salt Lake City</footer>
           </div>
         </ThemeProvider>
       </body>

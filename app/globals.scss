@@ -135,9 +135,10 @@ html[data-era="1997"] [data-era-only="1997"] {
   background-size: 100% auto;
   max-width: 860px;
   min-height: 100vh;
-  margin: 0 auto;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+  margin: 3rem auto;
+  box-shadow: 4px 12px 50px rgba(0, 0, 0, 0.45);
   position: relative;
+  transform: rotate(-1.2deg);
 }
 
 [data-era="2004"] [data-site]::after {
@@ -165,16 +166,54 @@ html[data-era="1997"] [data-era-only="1997"] {
   text-decoration: underline;
 }
 
-[data-era="2008"] [data-site] > nav a,
+[data-era="2008"] [data-site] > nav a {
+  color: #3b1f0a;
+  padding: 0 1.2rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  transition: background 0.15s, box-shadow 0.15s;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2), inset 0 -1px 2px rgba(255, 255, 255, 0.4);
+  }
+}
+
+[data-era="2008"] [data-site] > nav span {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+[data-era="2008"] [data-site] > nav [data-sep] {
+  display: none;
+}
+
 [data-era="2008"] [data-site] > nav span {
   color: #3b1f0a;
+}
+
+[data-era="2008"] [data-site] h1,
+[data-era="2008"] [data-site] h2 {
+  color: #1a2a4a;
+}
+
+[data-era="2008"] [data-site] a {
+  color: #1a2a4a;
 }
 
 [data-era="2008"] [data-site] > nav {
   width: 100%;
   max-width: 100%;
-  padding: 0.6rem 2rem;
-  padding-top: 0.6rem;
+  padding: 0;
+  padding-left: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: stretch;
   background: #c4a882;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.6),
@@ -182,7 +221,20 @@ html[data-era="1997"] [data-era-only="1997"] {
     0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
+[data-era="2008"] [data-site] {
+  min-height: 100vh;
+}
+
+[data-era="2008"] [data-site] header,
+[data-era="2008"] [data-site] main,
+[data-era="2008"] [data-site] footer,
+[data-era="2008"] [data-site] > nav,
+[data-era="2008"] [data-site] article {
+  max-width: 60rem;
+}
+
 [data-era="2008"] [data-site] main {
+  flex: 1;
   background: #f0eeed;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
@@ -199,17 +251,43 @@ html[data-era="1997"] [data-era-only="1997"] {
   font-family: Tahoma, sans-serif;
 }
 
-[data-era="2008"] [data-site] header {
+[data-era="2008"] [data-site] header,
+[data-era="2008"] [data-site] footer {
   max-width: 100%;
   width: 100%;
+  background: linear-gradient(to bottom, #1a2a4a, #0d1b35);
+  position: relative;
+  overflow: hidden;
+}
+
+[data-era="2008"] [data-site] header {
   height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0 3rem;
-  background: linear-gradient(to bottom, #1a2a4a, #0d1b35);
-  position: relative;
-  overflow: hidden;
+}
+
+[data-era="2008"] [data-site] footer {
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3rem;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+[data-era="2008"] [data-site] footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.18) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.18) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  pointer-events: none;
 }
 
 
@@ -250,6 +328,91 @@ html[data-era="1997"] [data-era-only="1997"] {
 }
 
 [data-era="2016"] body {
-  background: #f5f5f5;
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: #fff;
+}
+
+[data-era="2016"] [data-site] {
+  max-width: 960px;
+  margin: 0 auto;
+  background: #e3f2fd;
+  min-height: 100vh;
+}
+
+[data-era="2016"] [data-site] main {
+  flex: 1;
+}
+
+[data-era="2016"] [data-site] header {
+  max-width: 100%;
+  width: 100%;
+  background: #0d47a1;
+  padding: 2rem 3rem;
+  display: flex;
+  align-items: center;
+}
+
+[data-era="2016"] [data-site] header h1 {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+[data-era="2016"] [data-site] > nav {
+  width: 100%;
+  max-width: 100%;
+  background: #1565c0;
+  padding: 0 1rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: stretch;
+}
+
+[data-era="2016"] [data-site] > nav a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  padding: 0 1.2rem;
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background 0.15s, color 0.15s;
+
+  &:hover {
+    background: #0d47a1;
+    color: #fff;
+  }
+}
+
+[data-era="2016"] [data-site] > nav [data-sep] {
+  display: none;
+}
+
+[data-era="2016"] [data-site] > nav span {
+  display: flex;
+  align-items: center;
+}
+
+[data-era="2016"] [data-site] h1,
+[data-era="2016"] [data-site] h2 {
+  color: #1565c0;
+  font-weight: 300;
+}
+
+[data-era="2016"] [data-site] a {
+  color: #1976d2;
+}
+
+[data-era="2016"] [data-site] footer {
+  background: #0d47a1;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 1.5rem 3rem;
+  text-align: center;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  max-width: 100%;
+  width: 100%;
 }

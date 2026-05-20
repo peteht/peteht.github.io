@@ -17,7 +17,7 @@ export default function Nav() {
     <nav className={styles.nav}>
       {links.map(({ href, label }, i) => (
         <span key={href} className={styles.item}>
-          {i > 0 && <span className={styles.sep}>/</span>}
+          {i > 0 && <span className={styles.sep} data-sep>/</span>}
           <Link
             href={href}
             className={pathname === href ? styles.active : styles.link}
