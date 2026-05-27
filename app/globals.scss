@@ -334,100 +334,37 @@ html[data-era="1997"] [data-era-only="1997"] {
     1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
-[data-era="2016"] body {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  background: #fff;
+[data-era="2016"] [data-site] header,
+[data-era="2016"] [data-site] > nav,
+[data-era="2016"] [data-site] main,
+[data-era="2016"] [data-site] main article {
+  max-width: 53rem;
 }
 
-[data-era="2016"] body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-[data-era="2016"] [data-site] {
-  max-width: 960px;
-  margin: 0 auto;
-  background: #e3f2fd;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-[data-era="2016"] [data-site] main {
-  flex: 1;
-}
-
-[data-era="2016"] [data-site] header {
-  max-width: 100%;
+html[data-era="2016"] [data-era-only="2016"] {
+  display: block;
+  position: fixed;
+  inset: 0;
   width: 100%;
-  background: #0d47a1;
-  padding: 2rem 3rem;
-  display: flex;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+[data-era="2016"] [data-site] main h1,
+[data-era="2016"] [data-site] main h2 {
+  color: #fafafa;
+}
+
+[data-era="2016"] [data-site] main p,
+[data-era="2016"] [data-site] main li {
+  color: #eee;
+}
+
+[data-era="2016"] [data-award] {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 9999px;
+  padding: 0.2rem 0.5rem;
+  display: inline-flex;
   align-items: center;
-}
-
-[data-era="2016"] [data-site] header h1 {
-  color: #fff;
-  font-size: 2rem;
-  font-weight: 300;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-[data-era="2016"] [data-site] > nav {
-  width: 100%;
-  max-width: 100%;
-  background: #1565c0;
-  padding: 0 1rem;
-  height: 2.5rem;
-  display: flex;
-  align-items: stretch;
-}
-
-[data-era="2016"] [data-site] > nav a {
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
-  padding: 0 1.2rem;
-  display: flex;
-  align-items: center;
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: background 0.15s, color 0.15s;
-
-  &:hover {
-    background: #0d47a1;
-    color: #fff;
-  }
-}
-
-[data-era="2016"] [data-site] > nav [data-sep] {
-  display: none;
-}
-
-[data-era="2016"] [data-site] > nav span {
-  display: flex;
-  align-items: center;
-}
-
-[data-era="2016"] [data-site] h1,
-[data-era="2016"] [data-site] h2 {
-  color: #1565c0;
-  font-weight: 300;
-}
-
-[data-era="2016"] [data-site] a {
-  color: #1976d2;
-}
-
-[data-era="2016"] [data-site] footer {
-  background: #0d47a1;
-  color: rgba(255, 255, 255, 0.7);
-  padding: 1.5rem 3rem;
-  text-align: center;
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
-  max-width: 100%;
-  width: 100%;
 }

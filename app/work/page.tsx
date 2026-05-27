@@ -89,6 +89,7 @@ export default function Work() {
                   href={award.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  data-award
                 >
                   <Image
                     src={`/${award.icon}`}

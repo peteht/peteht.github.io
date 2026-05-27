@@ -54,6 +54,15 @@ export default function RootLayout({
     <html lang="en" className={`${oswald.variable} ${caveat.variable}`}>
       <body>
         <ThemeProvider>
+          {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+          <video
+            data-era-only="2016"
+            autoPlay
+            muted
+            loop
+            playsInline
+            src="/ambient-blue.mp4"
+          />
           <CursorTrail />
           <Timeline />
           <div className={styles.site} data-site>
@@ -72,7 +81,9 @@ export default function RootLayout({
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/construction.gif" alt="Under construction" />
             </div>
-            <footer className={styles.footer}>made with ❤️ in Salt Lake City</footer>
+            <footer className={styles.footer}>
+              made with ❤️ in Salt Lake City
+            </footer>
           </div>
         </ThemeProvider>
       </body>
