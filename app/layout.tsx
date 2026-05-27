@@ -22,6 +22,27 @@ const caveat = Caveat({
 export const metadata: Metadata = {
   title: "Pete Rugh",
   description: "Front end web developer",
+  openGraph: {
+    title: "Pete Rugh",
+    description: "Front end web developer",
+    url: "https://rughsterdesign.com",
+    siteName: "Pete Rugh",
+    images: [
+      {
+        url: "https://rughsterdesign.com/carl.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Pete Rugh",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pete Rugh",
+    description: "Front end web developer",
+    images: ["https://rughsterdesign.com/carl.jpg"],
+  },
 };
 
 export default function RootLayout({
