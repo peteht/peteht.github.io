@@ -8,7 +8,7 @@ const projects: Project[] = [
     url: "www.oregongridiron.com",
     href: "http://www.thefwa.com/site/oregon-gridiron",
     awards: [
-      { icon: "fwa.png", href: "http://www.thefwa.com/site/oregon-gridiron" },
+      { icon: "fwa.png", href: "http://oregongridiron.rughsterdesign.com/" },
       {
         icon: "awwwards.png",
         href: "http://www.awwwards.com/web-design-awards/oregon-gridiron",
@@ -32,7 +32,7 @@ const projects: Project[] = [
   {
     name: "Super Top Secret",
     url: "www.wearetopsecret.com",
-    href: "http://www.wearetopsecret.com",
+    href: "http://www.thefwa.com/site/super-top-secret",
     awards: [
       { icon: "fwa.png", href: "http://www.thefwa.com/site/super-top-secret" },
       {
@@ -57,7 +57,7 @@ const projects: Project[] = [
   {
     name: "Marcus Mariota Road to the Heisman",
     url: "www.mahalomarcus.com",
-    href: "#",
+    href: "http://mahalomariota.rughsterdesign.com/",
     awards: [
       {
         icon: "awwwards.png",
@@ -115,7 +115,8 @@ export default function Work() {
         alt="Sketch of a hand drawn arrow pointing upwards"
         width={786}
         height={882}
-        className={styles.arrow} data-era-image="2026"
+        className={styles.arrow}
+        data-era-image="2026"
       />
     </main>
   );
