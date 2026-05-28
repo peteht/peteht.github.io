@@ -6,9 +6,9 @@ const projects: Project[] = [
   {
     name: "Oregon Gridiron",
     url: "www.oregongridiron.com",
-    href: "http://www.thefwa.com/site/oregon-gridiron",
+    href: "http://oregongridiron.rughsterdesign.com/",
     awards: [
-      { icon: "fwa.png", href: "http://oregongridiron.rughsterdesign.com/" },
+      { icon: "fwa.png", href: "http://www.thefwa.com/site/oregon-gridiron" },
       {
         icon: "awwwards.png",
         href: "http://www.awwwards.com/web-design-awards/oregon-gridiron",
@@ -82,13 +82,13 @@ export default function Work() {
           <h2 className={styles.projectName}>{project.name}</h2>
           <div className={styles.meta}>
             <a
-                href={project.href}
-                className={styles.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {project.url}
-              </a>
+              href={project.href}
+              className={styles.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {project.url}
+            </a>
             <div className={styles.awards}>
               {project.awards.map((award) => (
                 <a
