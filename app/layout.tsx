@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Oswald, Caveat } from "next/font/google";
+import Script from "next/script";
 import Nav from "@/components/Nav";
 import VideoBackground from "@/components/VideoBackground";
 import ThemeProvider from "@/components/ThemeProvider";
@@ -53,6 +54,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${oswald.variable} ${caveat.variable}`}>
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-0WMQ73GW10"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-0WMQ73GW10');
+          `}
+        </Script>
+      </head>
       <body>
         <ThemeProvider>
           <VideoBackground src="/ambient-blue.mp4" />
