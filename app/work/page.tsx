@@ -81,7 +81,14 @@ export default function Work() {
         <article key={project.name} className={styles.project}>
           <h2 className={styles.projectName}>{project.name}</h2>
           <div className={styles.meta}>
-            <span className={styles.url}>{project.url}</span>
+            <a
+                href={project.href}
+                className={styles.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {project.url}
+              </a>
             <div className={styles.awards}>
               {project.awards.map((award) => (
                 <a
