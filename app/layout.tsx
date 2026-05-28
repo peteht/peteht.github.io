@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Oswald, Caveat } from "next/font/google";
 import Nav from "@/components/Nav";
+import VideoBackground from "@/components/VideoBackground";
 import ThemeProvider from "@/components/ThemeProvider";
 import Timeline from "@/components/Timeline";
 import OdometerCounter from "@/components/OdometerCounter";
@@ -54,15 +55,7 @@ export default function RootLayout({
     <html lang="en" className={`${oswald.variable} ${caveat.variable}`}>
       <body>
         <ThemeProvider>
-          {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-          <video
-            data-era-only="2016"
-            autoPlay
-            muted
-            loop
-            playsInline
-            src="/ambient-blue.mp4"
-          />
+          <VideoBackground src="/ambient-blue.mp4" />
           <CursorTrail />
           <Timeline />
           <div className={styles.site} data-site>
