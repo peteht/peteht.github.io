@@ -193,6 +193,11 @@ html[data-era="1997"] [data-era-only="1997"] {
   display: none;
 }
 
+[data-era="2008"] [data-site] > nav a[data-active] {
+  background: rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.25), inset 0 -1px 2px rgba(255, 255, 255, 0.3);
+}
+
 [data-era="2008"] [data-site] > nav span {
   color: #3b1f0a;
 }

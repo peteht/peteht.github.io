@@ -21,6 +21,7 @@ export default function Nav() {
           <Link
             href={href}
             className={pathname === href ? styles.active : styles.link}
+            data-active={pathname === href || undefined}
           >
             {label}
           </Link>

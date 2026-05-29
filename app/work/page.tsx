@@ -109,8 +109,8 @@ export default function Work() {
               ))}
             </div>
           </div>
-          {project.descriptions.map((desc, i) => (
-            <p key={i} className={styles.desc}>
+          {project.descriptions.map((desc) => (
+            <p key={desc} className={styles.desc}>
               {desc}
             </p>
           ))}

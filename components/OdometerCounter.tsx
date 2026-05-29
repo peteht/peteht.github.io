@@ -27,13 +27,14 @@ export default function OdometerCounter() {
   }, [pathname]);
 
   const display = count === null ? "0000000" : String(count).padStart(PAD, "0");
+  const digits = display.split("").map((digit, i) => ({ id: `slot-${i}`, digit }));
 
   return (
     <div className={styles.wrap}>
       <p className={styles.label}>You are visitor number</p>
       <div className={styles.odometer}>
-        {display.split("").map((digit, i) => (
-          <span key={i} className={styles.digit}>{digit}</span>
+        {digits.map(({ id, digit }) => (
+          <span key={id} className={styles.digit}>{digit}</span>
         ))}
       </div>
     </div>
