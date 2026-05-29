@@ -7,8 +7,8 @@ jest.mock("next/navigation", () => ({
 
 jest.mock("next/link", () => ({
   __esModule: true,
-  default: ({ href, children, className }: { href: string; children: React.ReactNode; className: string }) => (
-    <a href={href} className={className}>{children}</a>
+  default: ({ href, children, className, "data-active": dataActive }: { href: string; children: React.ReactNode; className: string; "data-active"?: boolean }) => (
+    <a href={href} className={className} data-active={dataActive}>{children}</a>
   ),
 }));
 
@@ -30,5 +30,16 @@ describe("Nav", () => {
     const homeLink = screen.getByText("Home").closest("a");
     expect(workLink?.className).toContain("active");
     expect(homeLink?.className).not.toContain("active");
+  });
+
+  it("sets data-active on the current route link only", () => {
+    usePathname.mockReturnValue("/skills");
+    render(<Nav />);
+    const skillsLink = screen.getByText("Skills").closest("a");
+    const homeLink = screen.getByText("Home").closest("a");
+    const workLink = screen.getByText("Work").closest("a");
+    expect(skillsLink).toHaveAttribute("data-active");
+    expect(homeLink).not.toHaveAttribute("data-active");
+    expect(workLink).not.toHaveAttribute("data-active");
   });
 });

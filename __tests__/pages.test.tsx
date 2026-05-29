@@ -33,6 +33,12 @@ describe("Work page", () => {
     expect(screen.getByText("Super Top Secret")).toBeInTheDocument();
     expect(screen.getByText("Marcus Mariota Road to the Heisman")).toBeInTheDocument();
   });
+
+  it("renders award links with data-award attribute", () => {
+    render(<Work />);
+    const awardLinks = document.querySelectorAll("[data-award]");
+    expect(awardLinks.length).toBeGreaterThan(0);
+  });
 });
 
 describe("Skills page", () => {
