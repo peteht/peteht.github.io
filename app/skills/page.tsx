@@ -4,19 +4,38 @@ import styles from "./skills.module.scss";
 
 const skillGroups: SkillGroup[] = [
   {
-    name: "Development",
+    name: "Languages & Frameworks",
     skills: [
       "JavaScript", "TypeScript", "React", "Next.js", "Vue", "Pinia",
-      "Node.js", "React Native", "WebSockets", "REST APIs", "CSS", "SVG",
-      "Canvas", "HTML5", "Animation", "Web Performance Optimization", "CI/CD",
+      "Node.js", "React Native",
+    ],
+  },
+  {
+    name: "Animation & Interaction",
+    skills: [
+      "GSAP", "CSS animations", "SVG", "Canvas", "HTML5 media APIs",
+      "Scroll-linked animations", "Web Animations API",
+    ],
+  },
+  {
+    name: "UI & Frontend Craft",
+    skills: [
+      "Semantic HTML", "Modern CSS", "Responsive layouts", "Core Web Vitals",
+      "Web Performance Optimization", "Figma workflows", "Pixel-accurate implementation",
+    ],
+  },
+  {
+    name: "Tooling & Infrastructure",
+    skills: [
+      "REST APIs", "WebSockets", "CI/CD", "Git",
+      "Accessibility (WCAG/Section 508)", "AI-assisted development (Copilot, Cursor)",
     ],
   },
   {
     name: "Leadership",
     skills: [
-      "Dev Team Leadership", "Developer Mentoring", "Product Planning & Ownership",
-      "Cross-functional Team Management", "Dev Pipeline Ownership", "Agile/Scrum",
-      "Accessibility (WCAG/Section 508)",
+      "Developer mentoring", "Cross-functional collaboration", "Code review",
+      "Product planning", "Agile/Scrum",
     ],
   },
 ];
