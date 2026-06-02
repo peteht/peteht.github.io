@@ -27,11 +27,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Pete Rugh",
     description: "Front end web developer",
-    url: "https://rughsterdesign.com",
+    url: "https://peterugh.com",
     siteName: "Pete Rugh",
     images: [
       {
-        url: "https://rughsterdesign.com/carl.jpg",
+        url: "https://peterugh.com/carl.jpg",
         width: 1200,
         height: 630,
         alt: "Pete Rugh",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Pete Rugh",
     description: "Front end web developer",
-    images: ["https://rughsterdesign.com/carl.jpg"],
+    images: ["https://peterugh.com/carl.jpg"],
   },
 };
 

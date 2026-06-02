@@ -47,9 +47,12 @@ describe("Skills page", () => {
     expect(screen.getByRole("heading", { name: /^skills$/i })).toBeInTheDocument();
   });
 
-  it("renders both skill groups", () => {
+  it("renders all skill groups", () => {
     render(<Skills />);
-    expect(screen.getByText("Development")).toBeInTheDocument();
+    expect(screen.getByText("Languages & Frameworks")).toBeInTheDocument();
+    expect(screen.getByText("Animation & Interaction")).toBeInTheDocument();
+    expect(screen.getByText("UI & Frontend Craft")).toBeInTheDocument();
+    expect(screen.getByText("Tooling & Infrastructure")).toBeInTheDocument();
     expect(screen.getByText("Leadership")).toBeInTheDocument();
   });
 });

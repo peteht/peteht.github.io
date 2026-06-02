@@ -6,7 +6,7 @@ const projects: Project[] = [
   {
     name: "Oregon Gridiron",
     url: "www.oregongridiron.com",
-    href: "http://oregongridiron.rughsterdesign.com/",
+    href: "http://oregongridiron.peterugh.com/",
     awards: [
       { icon: "fwa.png", href: "http://www.thefwa.com/site/oregon-gridiron" },
       {
@@ -57,7 +57,7 @@ const projects: Project[] = [
   {
     name: "Marcus Mariota Road to the Heisman",
     url: "www.mahalomarcus.com",
-    href: "http://mahalomariota.rughsterdesign.com/",
+    href: "http://mahalomariota.peterugh.com/",
     awards: [
       {
         icon: "awwwards.png",
