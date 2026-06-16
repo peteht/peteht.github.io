@@ -1,0 +1,90 @@
+name: Claude PR Review
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+permissions:
+  pull-requests: write
+  contents: read
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get PR diff
+        id: diff
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr diff ${{ github.event.pull_request.number }} > pr.diff
+          # Truncate to ~30k chars to stay within token budget
+          head -c 30000 pr.diff > pr_truncated.diff
+          echo "diff_content<<DIFF_EOF" >> $GITHUB_OUTPUT
+          cat pr_truncated.diff >> $GITHUB_OUTPUT
+          echo "DIFF_EOF" >> $GITHUB_OUTPUT
+
+      - name: Review with Claude
+        id: claude
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          PR_TITLE="${{ github.event.pull_request.title }}"
+          PR_BODY="${{ github.event.pull_request.body }}"
+
+          DIFF=$(cat pr_truncated.diff)
+
+          PAYLOAD=$(jq -n \
+            --arg title "$PR_TITLE" \
+            --arg body "$PR_BODY" \
+            --arg diff "$DIFF" \
+            '{
+              model: "claude-sonnet-4-6",
+              max_tokens: 1024,
+              messages: [{
+                role: "user",
+                content: ("You are a code reviewer. Review the following pull request and provide concise, actionable feedback.\n\nPR Title: " + $title + "\nPR Description: " + $body + "\n\nDiff:\n```\n" + $diff + "\n```\n\nFocus on:\n- Correctness bugs\n- Security issues\n- Significant performance problems\n- Clarity improvements\n\nBe direct and brief. If the change looks good, say so.")
+              }]
+            }')
+
+          RESPONSE=$(curl -sf https://api.anthropic.com/v1/messages \
+            -H "x-api-key: $ANTHROPIC_API_KEY" \
+            -H "anthropic-version: 2023-06-01" \
+            -H "content-type: application/json" \
+            -d "$PAYLOAD")
+
+          REVIEW=$(echo "$RESPONSE" | jq -r '.content[0].text')
+
+          echo "review<<REVIEW_EOF" >> $GITHUB_OUTPUT
+          echo "$REVIEW" >> $GITHUB_OUTPUT
+          echo "REVIEW_EOF" >> $GITHUB_OUTPUT
+
+      - name: Post or update review comment
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REVIEW: ${{ steps.claude.outputs.review }}
+        run: |
+          BODY="### Claude Code Review
+
+${REVIEW}
+
+---
+*Reviewed by [Claude](https://anthropic.com) (claude-sonnet-4-6)*"
+
+          EXISTING_ID=$(gh api \
+            repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments \
+            --jq '.[] | select(.user.login == "github-actions[bot]" and (.body | startswith("### Claude Code Review"))) | .id' \
+            | head -1)
+
+          if [ -n "$EXISTING_ID" ]; then
+            gh api \
+              repos/${{ github.repository }}/issues/comments/${EXISTING_ID} \
+              -X PATCH \
+              -f body="$BODY"
+          else
+            gh pr comment ${{ github.event.pull_request.number }} --body "$BODY"
+          fi
