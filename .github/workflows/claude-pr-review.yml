@@ -37,17 +37,22 @@ jobs:
           PR_BODY="${{ github.event.pull_request.body }}"
 
           DIFF=$(cat pr_truncated.diff)
+          # Read from base branch so a PR cannot influence its own review
+          GUIDELINES=$(git show origin/${{ github.event.pull_request.base.ref }}:AGENTS.md 2>/dev/null || echo "")
+          DEFAULT_GUIDELINES="Focus on: correctness bugs, security issues, JS performance, accessibility, semantic markup, and TypeScript pitfalls."
 
           PAYLOAD=$(jq -n \
             --arg title "$PR_TITLE" \
             --arg body "$PR_BODY" \
             --arg diff "$DIFF" \
+            --arg guidelines "$GUIDELINES" \
+            --arg defaults "$DEFAULT_GUIDELINES" \
             '{
               model: "claude-sonnet-4-6",
               max_tokens: 1024,
               messages: [{
                 role: "user",
-                content: ("You are a code reviewer. Review the following pull request and provide concise, actionable feedback.\n\nPR Title: " + $title + "\nPR Description: " + $body + "\n\nDiff:\n```\n" + $diff + "\n```\n\nFocus on:\n- Correctness bugs\n- Security issues\n- Significant performance problems\n- Clarity improvements\n\nBe direct and brief. If the change looks good, say so.")
+                content: ("You are a code reviewer.\n\n" + (if $guidelines != "" then "Project guidelines:\n\n" + $guidelines + "\n\n---\n\n" else "No project guidelines found. Apply these defaults: " + $defaults + "\n\n---\n\n" end) + "Review this pull request and provide concise, actionable feedback.\n\nPR Title: " + $title + "\nPR Description: " + $body + "\n\nDiff:\n```\n" + $diff + "\n```\n\nBe direct and brief. If the change looks good, say so.")
               }]
             }')
 
