@@ -90,7 +90,7 @@ export default function RootLayout({
               <img src="/construction.gif" alt="Under construction" />
             </div>
             <footer className={styles.footer}>
-              made with ❤️ in Salt Lake City
+              made with 💛 in Salt Lake City
             </footer>
           </div>
         </ThemeProvider>

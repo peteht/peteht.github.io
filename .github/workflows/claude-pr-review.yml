@@ -68,12 +68,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REVIEW: ${{ steps.claude.outputs.review }}
         run: |
-          BODY="### Claude Code Review
-
-${REVIEW}
-
----
-*Reviewed by [Claude](https://anthropic.com) (claude-sonnet-4-6)*"
+          BODY=$(printf '### Claude Code Review\n\n%s\n\n---\n*Reviewed by [Claude](https://anthropic.com) (claude-sonnet-4-6)*' "$REVIEW")
 
           EXISTING_ID=$(gh api \
             repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments \
