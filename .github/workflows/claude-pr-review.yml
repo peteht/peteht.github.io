@@ -37,7 +37,7 @@ jobs:
           PR_BODY="${{ github.event.pull_request.body }}"
 
           DIFF=$(cat pr_truncated.diff)
-          GUIDELINES=$(cat AGENTS.md 2>/dev/null || echo "")
+          GUIDELINES=$(git show origin/${{ github.event.pull_request.base.ref }}:AGENTS.md 2>/dev/null || echo "")
 
           PAYLOAD=$(jq -n \
             --arg title "$PR_TITLE" \

@@ -13,3 +13,5 @@ When reviewing pull requests, prioritize the following:
 - **Semantic markup** — correct use of HTML elements (headings hierarchy, landmarks, lists, etc.)
 - **JS optimization** — bundle size impact, dead code, inefficient data structures or algorithms
 - **TypeScript pitfalls** — unsafe `any`, missing null checks, incorrect type assertions, overly broad types
+- **Correctness bugs** — logic errors, off-by-one errors, incorrect assumptions
+- **Security issues** — XSS, injection risks, exposed secrets, insecure dependencies
