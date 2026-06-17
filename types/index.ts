@@ -7,7 +7,7 @@ export interface Project {
   name: string;
   url: string;
   href: string;
-  awards: Award[];
+  awards?: Award[];
   descriptions: string[];
   role: string;
 }
