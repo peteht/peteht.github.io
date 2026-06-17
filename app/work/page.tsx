@@ -69,6 +69,16 @@ const projects: Project[] = [
     ],
     role: "Responsive front end development and animation.",
   },
+  {
+    name: "League of Legends Universe",
+    url: "universe.leagueoflegends.com",
+    href: "https://universe.leagueoflegends.com/en_US/",
+    descriptions: [
+      "An immersive editorial experience for Riot Games that brings the lore, champions, and world of League of Legends to life.",
+      "Built for one of the most visited game properties in the world, the site features rich scroll-driven animations, cinematic video, and a deep content system spanning hundreds of characters and stories.",
+    ],
+    role: "Lead front end development, built while at Super Top Secret.",
+  },
 ];
 
 export default function Work() {
@@ -90,7 +100,7 @@ export default function Work() {
               {project.url}
             </a>
             <div className={styles.awards}>
-              {project.awards.map((award) => (
+              {project.awards?.map((award) => (
                 <a
                   key={award.icon}
                   href={award.href}
